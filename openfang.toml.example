@@ -1,51 +1,51 @@
-# OpenFang Agent OS — Example Configuration
-# Copy to ~/.openfang/config.toml and customize.
+# IA,BRO! Agent OS — Configuración de Ejemplo
+# Copia este archivo a ~/.iabro/config.toml y personalízalo a tu pinta.
 
-# API server settings
-# api_key = ""                               # Set to enable Bearer auth (strongly recommended when exposing)
-# api_listen = "127.0.0.1:50051"             # HTTP API bind address.
-                                             # Use "0.0.0.0:<port>" to expose on LAN / Docker. The port must
-                                             # match the port you publish (Docker image exposes 4200). You can
-                                             # also override at runtime with OPENFANG_LISTEN=0.0.0.0:4200.
-                                             # See docs/configuration.md "Exposing the Dashboard".
+# Configuración del servidor API
+# api_key = ""                               # Activa esto para habilitar la autenticación Bearer (muy recomendado al exponerlo)
+# api_listen = "127.0.0.1:50051"             # Dirección de enlace de la API HTTP.
+
+# Usa "0.0.0.0:<puerto>" para exponer en LAN / Docker. El puerto debe
+# coincidir con el que publiques (la imagen Docker expone el 4200). También puedes
+# sobrescribirlo en tiempo de ejecución con IABRO_LISTEN=0.0.0.0:4200.
 
 [default_model]
 provider = "anthropic"                    # "anthropic", "gemini", "openai", "groq", "ollama", etc.
-model = "claude-sonnet-4-20250514"        # Model identifier
-api_key_env = "ANTHROPIC_API_KEY"         # Environment variable holding API key
-# base_url = "https://api.anthropic.com"  # Optional: override API endpoint
+model = "claude-sonnet-4-20250514"        # Identificador del modelo por defecto
+api_key_env = "ANTHROPIC_API_KEY"         # Variable de entorno que guarda la API key
+# base_url = "https://api.anthropic.com"  # Opcional: para sobrescribir el endpoint de la API
 
 [memory]
-decay_rate = 0.05                         # Memory confidence decay rate
-# sqlite_path = "~/.openfang/data/openfang.db"   # Optional: custom DB path
+decay_rate = 0.05                         # Tasa de caída de confianza de la memoria
+# sqlite_path = "~/.iabro/data/iabro.db"   # Opcional: ruta personalizada para la base de datos
 
 [network]
-listen_addr = "127.0.0.1:4200"           # OFP listen address
-# shared_secret = ""                      # Required for P2P authentication
+listen_addr = "127.0.0.1:4200"           # Dirección de escucha de IA,BRO!
+# shared_secret = ""                      # Requerido para la autenticación P2P (entre pares)
 
-# Session compaction (LLM-based context management)
+# Compactación de sesión (Gestión de contexto basada en LLM)
 # [compaction]
-# threshold = 80                          # Compact when messages exceed this count
-# keep_recent = 20                        # Keep this many recent messages after compaction
-# max_summary_tokens = 1024               # Max tokens for LLM summary
+# threshold = 80                          # Compactar cuando los mensajes superen esta cantidad
+# keep_recent = 20                        # Mantener esta cantidad de mensajes recientes tras compactar
+# max_summary_tokens = 1024               # Máximo de tokens para el resumen del LLM
 
-# Usage tracking display
-# usage_footer = "Full"                   # "Off", "Tokens", "Cost", or "Full"
+# Visualización del seguimiento de uso
+# usage_footer = "Full"                   # "Off", "Tokens", "Cost", o "Full"
 
-# Channel adapters (configure tokens via environment variables)
+# Adaptadores de canales (configura los tokens mediante variables de entorno)
 # [telegram]
 # bot_token_env = "TELEGRAM_BOT_TOKEN"
-# allowed_users = []                      # Empty = allow all
+# allowed_users = []                      # Vacío = permitir a todos
 
 # [discord]
 # bot_token_env = "DISCORD_BOT_TOKEN"
-# guild_ids = []                          # Empty = all guilds
+# guild_ids = []                          # Vacío = todos los servidores
 
 # [slack]
 # bot_token_env = "SLACK_BOT_TOKEN"
 # app_token_env = "SLACK_APP_TOKEN"
 
-# MCP server connections
+# Conexiones de servidores MCP (Model Context Protocol)
 # [[mcp_servers]]
 # name = "filesystem"
 # command = "npx"
