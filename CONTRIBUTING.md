@@ -1,6 +1,3 @@
-# Contributing to OpenFang
-
-Thank you for your interest in contributing to OpenFang. This guide covers everything you need to get started, from setting up your development environment to submitting pull requests.
 
 ## Table of Contents
 
