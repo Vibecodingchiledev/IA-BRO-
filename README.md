@@ -1,8 +1,8 @@
 
 <p align="center">
 
-VIBECODINGCHILE 
----
+VIBE CODING CHILE 
+---LEGALTECH IA,BRO
 
 ## Security
 
