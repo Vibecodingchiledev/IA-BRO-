@@ -1,0 +1,23 @@
+[package]
+name = "openfang-tui"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Terminal UI for OpenFang task/TODO management"
+
+[dependencies]
+tokio = { workspace = true }
+ratatui = { workspace = true }
+crossterm = "0.27"
+serde = { workspace = true }
+serde_json = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+colored = { workspace = true }
+chrono = { workspace = true }
+uuid = { workspace = true }
+clap = { workspace = true, features = ["derive"] }
+
+[dev-dependencies]
+tokio-test = { workspace = true }
